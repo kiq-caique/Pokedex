@@ -28,7 +28,7 @@ const Searchbar = () => {
       {pokemon ? (
         <div>
           <div>Nome: {pokemon.name}</div>
-          <img src={pokemon.sprites.front_default} />
+          <img src={pokemon.sprites.front_default} alt={pokemon.name} />
         </div>
       ) : null}
     </div>

@@ -21,14 +21,14 @@ function App() {
   };
 
   useEffect(() => {
-    console.log("carregou");
-  });
+    fetchPokemon();
+  }, []);
 
   return (
     <div>
       <Navbar />
       <Searchbar />
-      <Pokedex pokemons={pokemon} loading={loading} />
+      <Pokedex pokemons={pokemon.results} loading={loading} />
     </div>
   );
 }

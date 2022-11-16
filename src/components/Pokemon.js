@@ -2,7 +2,13 @@ import React from "react";
 
 const Pokemon = (props) => {
   const { pokemon } = props;
-  return <div>{pokemon.name}</div>;
+  return (
+    <div className="pokemon-card">
+      <div className="pokemon-image-container">
+        <img alt={pokemon.name} src={pokemon.sprites.front_default} />
+      </div>
+    </div>
+  );
 };
 
 export default Pokemon;

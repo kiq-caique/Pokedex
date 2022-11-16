@@ -17,3 +17,32 @@ nav {
 .App {
   text-align: center;
 }
+
+.searchbar-container {
+  display: flex;
+  margin: 0px auto;
+  padding: 0 20px;
+  align-items: center;
+}
+
+.searchbar {
+  background-color: white;
+  margin-right: 20px;
+
+}
+
+.searchbar input {
+  padding: 10px;
+  box-shadow: 0px 2px 2px (0, 0, 0, 0.55);
+  border-radius: 13px;
+  
+}
+
+.searchbar-btn button {
+  background-color: rgb(192, 31, 31);
+  border: none;
+  border-radius: 10px;
+  height: 44px;
+  color: white;
+  padding: 10px 12px;
+}

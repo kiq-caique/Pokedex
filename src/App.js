@@ -1,15 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getPokemon } from "./api";
 import "./App.css";
 import Navbar from "./components/Navbar";
+import Pokedex from "./components/Pokedex";
 import Searchbar from "./components/Searchbar";
-import { searchPokemon } from "./api";
 
 function App() {
+  const [loading, setLoading] = useState(false);
+  const [pokemon, setPokemon] = useState([]);
+
+  const fetchPokemon = async () => {
+    try {
+      setLoading(true);
+      const result = await getPokemon();
+      setPokemon(result);
+      setLoading(false);
+    } catch (error) {
+      console.log("fetchPokemon error", error);
+    }
+  };
+
+  useEffect(() => {
+    console.log("carregou");
+  });
+
   return (
     <div>
       <Navbar />
       <Searchbar />
-      <div className="App"></div>
+      <Pokedex pokemons={pokemon} loading={loading} />
     </div>
   );
 }

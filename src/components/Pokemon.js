@@ -7,6 +7,7 @@ const Pokemon = (props) => {
       <div className="pokemon-image-container">
         <img alt={pokemon.name} src={pokemon.sprites.front_default} />
       </div>
+      {pokemon.name}
     </div>
   );
 };

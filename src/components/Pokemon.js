@@ -2,6 +2,10 @@ import React from "react";
 
 const Pokemon = (props) => {
   const { pokemon } = props;
+  const onHeartClick = () => {
+    console.log("Favorito");
+  };
+  const heart = "❤";
   return (
     <div className="pokemon-card">
       <div className="pokemon-image-container">
@@ -21,12 +25,14 @@ const Pokemon = (props) => {
             {pokemon.types.map((type, index) => {
               return (
                 <div key={index} className="pokemon-type-text">
-                  {type.type}
+                  {type.type.name}
                 </div>
               );
             })}
           </div>
-          <h3> {pokemon.name} </h3>
+          <button className="pokemon-heart-btn" onClick={onHeartClick}>
+            {heart}
+          </button>
         </div>
       </div>
     </div>

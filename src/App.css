@@ -82,6 +82,7 @@ nav {
   flex-direction: column;
   justify-content: space-between;
   padding: 10px 10px 10px 0px;
+  flex: 1;
 }
 
 .card-top {
@@ -95,8 +96,20 @@ nav {
   text-transform: capitalize;
 }
 
-.card-bottom {
+.card-botton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
 
+.pokemon-type {
+  display: flex;
+}
+
+.pokemon-type-text {
+  margin-right: 10px;
+  text-transform: capitalize;
 }
 
 .App {

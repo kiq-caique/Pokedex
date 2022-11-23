@@ -3,12 +3,16 @@ import Pagination from "./Pagination";
 import Pokemon from "./Pokemon";
 
 const Pokedex = (props) => {
-  const { pokemons, loading, page, totalPages } = props;
+  const { pokemons, loading, page, setPage, totalPages } = props;
   const onLeftClickhandler = () => {
-    console.log("volta");
+    if (page > 0) {
+      setPage(page - 1);
+    }
   };
   const onRightClickhandler = () => {
-    console.log("avança");
+    if (page + 1 !== totalPages) {
+      setPage(page + 1);
+    }
   };
   return (
     <div>

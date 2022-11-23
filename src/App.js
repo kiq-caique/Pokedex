@@ -7,7 +7,7 @@ import Searchbar from "./components/Searchbar";
 
 function App() {
   const [page, setPage] = useState(0);
-  const [TotalPages, setTotalPages] = useState(0);
+  const [totalPages, setTotalPages] = useState(0);
   const [loading, setLoading] = useState(false);
   const [pokemon, setPokemon] = useState([]);
 
@@ -31,7 +31,7 @@ function App() {
 
   useEffect(() => {
     fetchPokemon();
-  }, []);
+  }, [page]);
 
   return (
     <div>
@@ -41,7 +41,8 @@ function App() {
         pokemons={pokemon}
         loading={loading}
         page={page}
-        TotalPages={TotalPages}
+        setPage={setPage}
+        totalPages={totalPages}
       />
     </div>
   );

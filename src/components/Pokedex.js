@@ -4,7 +4,12 @@ import Pokemon from "./Pokemon";
 
 const Pokedex = (props) => {
   const { pokemons, loading, page, totalPages } = props;
-  const onLeftClickhandler = () => {};
+  const onLeftClickhandler = () => {
+    console.log("volta");
+  };
+  const onRightClickhandler = () => {
+    console.log("avança");
+  };
   return (
     <div>
       <div className="pokedex-header">

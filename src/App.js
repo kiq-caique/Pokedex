@@ -6,13 +6,16 @@ import Pokedex from "./components/Pokedex";
 import Searchbar from "./components/Searchbar";
 
 function App() {
+  const [page, setPage] = useState(0);
+  const [TotalPages, setTotalPages] = useState(0);
   const [loading, setLoading] = useState(false);
   const [pokemon, setPokemon] = useState([]);
 
+  const itensPerPage = 50;
   const fetchPokemon = async () => {
     try {
       setLoading(true);
-      const data = await getPokemon();
+      const data = await getPokemon(itensPerPage, itensPerPage * page);
       const promises = data.results.map(async (pokemon) => {
         return await getPokemonData(pokemon.url);
       });
@@ -20,6 +23,7 @@ function App() {
       const results = await Promise.all(promises);
       setPokemon(results);
       setLoading(false);
+      setTotalPages(Math.ceil(data.count / itensPerPage));
     } catch (error) {
       console.log("fetchPokemon error", error);
     }
@@ -33,7 +37,12 @@ function App() {
     <div>
       <Navbar />
       <Searchbar />
-      <Pokedex pokemons={pokemon} loading={loading} />
+      <Pokedex
+        pokemons={pokemon}
+        loading={loading}
+        page={page}
+        TotalPages={TotalPages}
+      />
     </div>
   );
 }

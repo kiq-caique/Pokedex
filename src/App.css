@@ -139,10 +139,10 @@ nav {
 }
 
 
-@media(max-width: 800px) {
+/* @media(max-width: 800px) {
   .pokedex-grid {
     display: grid;
     gap: 10px;
     grid-template-columns: repeat(3, 1fr);
   }
-}
+} */

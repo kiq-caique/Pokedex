@@ -35,7 +35,7 @@ const Pokedex = (props) => {
           {pokemons &&
             pokemons.map((pokemon, index) => {
               return (
-                <div>
+                <div key={index}>
                   <Pokemon key={index} pokemon={pokemon} />
                 </div>
               );
